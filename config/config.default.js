@@ -26,7 +26,7 @@ module.exports = appInfo => {
 
   config.auth = {
     // match: ['']
-    ignore: ['/api/v1/user/login', '/api/v1/user/reg']
+    ignore: ['/api/v1/user/login', '/api/v1/user/reg', '/api/v1/user/mobile/reg', '/api/v1/user/mobile/code']
   };
 
   config.sequelize = {
@@ -89,6 +89,18 @@ module.exports = appInfo => {
       password: '',
       db: 3,
     }
+  };
+
+  config.aliSMS = {
+    isopen: false,
+    expire: 600,
+    accessKeyId: '',
+    accessSecret: '',
+    regionId: '',
+    product: '',
+    version: '',
+    SignName: '',
+    TemplateCode: ''
   };
 
   // add your user config here

@@ -14,14 +14,9 @@ module.exports = app => {
   // 用户退出
   router.post('/api/v1/user/logout', controller.v1.user.logout);
 
-  // router.get('/user',controller.user.index);
-        
-//   router.get('/', controller.home.index);
-  
-//   router.get('/list',controller.home.list);
-
-
-  // 资源路由
-  // router.resources('post', '/api/post', controller.home);
+  // 手机号注册 /api/v1/user/mobile/reg
+  router.post('/api/v1/user/mobile/reg', controller.v1.user.regMobile);
+  // 手机号验证码
+  router.post('/api/v1/user/mobile/code', controller.v1.user.sendCode);
 
 };

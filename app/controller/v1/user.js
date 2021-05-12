@@ -83,6 +83,55 @@ class UserController extends Controller {
   }
 
   /**
+   * 用户注册, 使用验证码
+   */
+  async regMobile () {
+    const { ctx, app } = this;
+    
+    // 参数验证
+    // ctx.validate({
+    //   mobile: {
+    //     type: 'string',
+    //     required: true,
+    //     desc: '手机号'
+    //   },
+    //   code: {
+    //     type: 'string',
+    //     required: true,
+    //     desc: '验证码'
+    //   }
+    // });
+
+    let { mobile, code } = ctx.request.body;
+
+    let cacheCode = await ctx.service.cache.get(`sendCode_${mobile}`);
+
+    console.log("cacheCode:" + cacheCode);
+ 
+    console.log("code:" + code);   
+
+
+    if (code != cacheCode ) {
+      return this.ctx.body = "验证码错误";
+    } else {
+      return this.ctx.body = "注册chenggong";
+    }
+
+    
+  }
+  
+
+  /**
+   * 给手机发送验证码
+   */
+  async sendCode () {
+    await this.ctx.service.user.sendCode();
+
+    // this.app.service.User.sendCode()
+    // return this.ctx.body = "1234";
+  }
+
+  /**
    * 读取指定用户信息
    */
   async show ()

@@ -13,9 +13,14 @@ module.exports = app => {
     },
     username: {
       type: STRING(200),
-      allowNull: false,
+      allowNull: true,
       defaultValue: '',
       comment: '用户名称',
+      unique: true
+    },
+    mobile: {
+      type: STRING(11),
+      allowNull: false,
       unique: true
     },
     password: {

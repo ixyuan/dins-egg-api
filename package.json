@@ -7,6 +7,7 @@
     "declarations": true
   },
   "dependencies": {
+    "@alicloud/pop-core": "^1.7.10",
     "crypto": "^1.0.1",
     "egg": "^2.15.1",
     "egg-cors": "^2.2.3",
@@ -15,7 +16,8 @@
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^6.0.0",
     "egg-valparams": "^1.4.3",
-    "mysql2": "^2.2.5"
+    "mysql2": "^2.2.5",
+    "random": "^3.0.6"
   },
   "devDependencies": {
     "autod": "^3.0.1",
